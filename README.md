@@ -1,6 +1,5 @@
 ## Descripción 🏝
-Pequeño proyecto de lista de tareas como forma de practicar Javascript
-No ha sido probado para tener soporte crossbrowsing.
+Este es el proyecto final de mi portfolio para desarrollo Front-end.
 
 
 ## Autor ✒️
@@ -10,7 +9,7 @@ No ha sido probado para tener soporte crossbrowsing.
 * [Github](https://github.com/cristialmansa)
 
 ## Ver ejemplo en vivo 
-- [URL DE LA PAGINA](URL DE LA PAGINA)
+- [https://cristialmansa.github.io/Portfolio-de-Cristina-Almansa/](https://cristialmansa.github.io/Portfolio-de-Cristina-Almansa/)
 
 ## Instalación 
 Este proyecto no necesita de instalación. Simplemente abre la carpeta o haz doble click en el .html
