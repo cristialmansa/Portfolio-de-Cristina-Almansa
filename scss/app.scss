@@ -1,0 +1,290 @@
+@import 'reset/reset', 'reset/keyframes', 'reset/mixins';
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.section {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right bottom, 
+    rgb(1, 1, 10),
+    rgb(6, 6, 30),
+    rgb(8, 8, 50), 
+    rgb(25, 25, 60), 
+    rgb(50, 20, 70),
+    rgb(70, 25, 75),
+    rgb(80, 30, 90));
+    position: relative;
+}
+.mainpage {
+    @include flex( column, wrap, center, center);
+}
+.h1 {
+    color: white;
+    font-size: 2.8em;
+    font-weight: 600;
+    position: absolute;
+    top: 45%;
+}
+.puesto {
+    color: white;
+    position: absolute;
+    top: 55%;
+}
+.logo {
+    width: 100px;
+    position: absolute;
+    opacity: 0.3;
+    top: 35%;
+}
+.cuerpo {
+    background: linear-gradient(to left bottom,
+    rgb(80, 30, 90),
+    rgb(70, 25, 75),
+    rgb(50, 20, 70),
+    rgb(25, 25, 60),
+    rgb(8, 8, 50),
+    rgb(6, 6, 30),
+    rgb(1, 1, 10));
+}
+.works {
+    height: 100vh;
+    @include flex ( column, wrap, center, right);
+}
+.secciones {
+    width: 100%;
+    @include flex ( row, wrap, space-around, inherit);
+    position: relative;
+}
+.nombreseccion { 
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+.nombreseccion .h2 {
+    background: linear-gradient(to left, 
+    #C6EA8D, #FE90AF);
+    -webkit-background-clip: text;
+     color: transparent;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.lineasub {
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(to left, 
+    #d74d89, #eb8777, #f1a355);
+}
+.tarjeta {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.tarjeta.uno {
+    background: linear-gradient(to right, 
+    #541447, #dd89ad, #61529f);
+    box-shadow:  1px 1px 3px #61529f,
+                -3px -3px 10px #541447;
+    background-size: 500%;
+    animation: background-mov 3s infinite alternate;
+    margin-bottom: 50px;      
+}
+.tarjeta.dos {
+    background: linear-gradient(to left, 
+    #d74d89, #eb8777, #f1a355);
+    box-shadow:  1px 1px 4px #eb8777,
+                -3px -3px 10px #d74d89;
+    background-size: 500%;
+    animation: background-mov 3s infinite alternate;
+    margin-bottom: 50px;    
+}
+.tarjeta.tres {
+    background: linear-gradient(to left top, 
+    #36569c, #5d8dca, #825a9b);
+    box-shadow:  1px 1px 4px #5d8dca,
+                -3px -3px 10px #36569c;
+    background-size: 500%;
+    animation: background-mov 3s infinite alternate;
+    margin-bottom: 50px;    
+}
+.tarjeta.cuatro {
+    background: linear-gradient(to right bottom, 
+    #3e2763, #dd2e5d, #ebb278);
+    box-shadow:  1px 1px 4px #dd2e5d,
+                -3px -3px 10px #3e2763;
+    background-size: 500%;
+    animation: background-mov 3s infinite alternate;
+    margin-bottom: 50px;    
+}
+.h3 {
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    top: 30%;
+    font-weight: 400;
+    text-align: center;
+}
+.tarjeta .h3 {
+    opacity: 1;
+    &.activo {
+        opacity: 0;
+    }
+}
+.foot {
+    height: 100vh;
+    background: linear-gradient(to right bottom, 
+    rgb(1, 1, 10),
+    rgb(6, 6, 30),
+    rgb(8, 8, 50), 
+    rgb(25, 25, 60), 
+    rgb(50, 20, 70),
+    rgb(70, 25, 75),
+    rgb(80, 30, 90));
+    @include flex ( column, wrap, space-evenly, center )
+}
+.about {
+    @include flex ( row, wrap, center, center ) 
+}
+.infopersonal {
+    width: 80%;
+    padding-left: 20px;
+}
+.infopersonal .p:first-child {
+    color: white;
+    font-size: 0.7em;
+    line-height: 30px;
+}
+.infopersonal .p:nth-child(2), .infopersonal .p:last-child {
+    font-size: 0.6em;
+    line-height: 20px;
+    background: linear-gradient(to left, 
+    #541447, #dd89ad, #61529f);
+    -webkit-background-clip: text;
+     color: transparent;
+}
+.img {
+    width: 225px;
+    height: 225px;
+}
+.img img {
+    border-radius: 50%;
+}
+.cincuenta {
+    width: 50%;
+    @include flex ( row, nowrap, center, baseline )
+}
+.rrss {
+    text-align: center;
+}
+.fab {
+    font-size: 1.5em;
+    padding-right: 20px;
+    cursor: pointer;
+    background: linear-gradient(to left, 
+    #C6EA8D, #FE90AF);
+    -webkit-background-clip: text;
+     color: transparent;
+}
+.fab:hover {
+    background: linear-gradient(to left, 
+    #36569c, #5d8dca, #825a9b);
+    -webkit-background-clip: text;
+     color: transparent;
+}
+.iconos {
+    margin-bottom: 20px;
+}
+.rrss .email {
+    background: linear-gradient(to left, 
+    #36569c, #5d8dca, #825a9b);
+    -webkit-background-clip: text;
+     color: transparent;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.rrss .p {
+    color: white;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+}
+// .desplegado{
+//     height: 100vh;
+//     background: linear-gradient(to right bottom, 
+//     rgb(1, 1, 10),
+//     rgb(6, 6, 30),
+//     rgb(8, 8, 50), 
+//     rgb(25, 25, 60), 
+//     rgb(50, 20, 70),
+//     rgb(70, 25, 75),
+//     rgb(80, 30, 90));
+//     @include flex ( row, wrap, space-evenly, center);
+//     position: relative;
+// }
+// .desplegado .img{
+//     cursor: pointer;
+//     transition: all .5s ease;
+//     transform: scale(.9);
+//     border-radius: 10%;
+//     &:hover{
+//         transform: scale(1);
+//     }
+// }
+// .lightbox{
+//     width: 100%;
+//     height: 100%;
+//     background: rgb(70, 25, 75, 0.8);
+//     backdrop-filter: blur(1em);
+//     position: fixed;
+//     top:0;
+//     left:0;
+//     z-index: 1;
+//     @include flex( column , nowrap , center , center );
+//     transition: all .5s ease;
+//     opacity: 0;
+//     pointer-events: none;
+
+//     &.activo{
+//         opacity: 1;
+//         pointer-events: auto;
+//     }
+// }
+// .lightbox .button {
+//     width:1.5em;
+//     height:1.5em;
+//     font-size: 4em;
+//     transform: rotate(45deg);
+//     cursor: pointer;
+//     transition: all .5s ease;
+//     transform: rotate(45deg) scale(1);
+//     background: linear-gradient(to left, 
+//     #C6EA8D, #FE90AF);
+//     -webkit-background-clip: text;
+//      color: transparent;
+//     &:hover{
+//         transform: rotate(45deg) scale(.9);
+//     }
+// }
+// .desplegado .button {
+//     width:1.5em;
+//     height:1.5em;
+//     font-size: 4em;
+//     background: linear-gradient(to left, 
+//     #36569c, #5d8dca, #825a9b);
+//     -webkit-background-clip: text;
+//      color: transparent;
+//      transform: rotate(45deg);
+//      cursor: pointer;
+//      position: absolute;
+//     //  top: 0;
+//     //  right: 0;
+//      z-index: 1;
+// }
+// .lightbox .img{
+//     width:90%;
+//     max-width: 80em;
+//     height: 70vh;
+//     object-fit: contain;
+// }
