@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristina Almansa</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://kit.fontawesome.com/fcd20302e9.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/fcd20302e9.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -15,35 +16,52 @@
 </head>
 <body>
     <section class="section uno">
+        <div id="particles-js"></div>
         <nav class="menu">
             <div class="boton">
                 <div class="linea1"></div>
                 <div class="linea2"></div>
                 <div class="linea3"></div>
             </div>
+            <!-- <div class="cookies">
+                <p>Esta página utiliza cookies.</p>
+                <div class="pestanacerrar"></div>
+            </div> -->
         </nav>
-        <div class="cortinilla">
-        </div>
-        <div class="menucortina">
-                    <ul class="ul">
-                        <li class="li">
-                            <a href="#works">Works</a>
-                        </li>
-                        <li class="li">
-                            <a href="#rrss">About</a>
-                        </li>
-                        <li class="li">
-                            <a href="#rrss">Social Media</a>
-                        </li>
-                    </ul>
-            </div>
-    </div>
-        <div id="particles-js"></div>
         <div class="mainpage">
             <h1 class="h1">Cristina Almansa</h1>
             <p class="puesto">WEB DEVELOPER | GRAPHIC DESIGNER</p>
-            <img class="logo" src="assets/logo1.png" alt="">
+            <img loading="lazy" class="logo" src="assets/logo1.png" alt="Logo">
         </div> 
+        <div class="cortinilla"></div>
+        <div class="menucortina">
+            <div class="centrado">
+                    <ul class="ul">
+                        <li class="li uno">
+                            <a rel="section" href="#works">Works</a>
+                        </li>
+                        <li class="li dos">
+                            <a rel="section" href="#rrss">About</a>
+                        </li>
+                        <li class="li">
+                            <div class="iconos">
+                                <a rel="external" href="https://github.com/cristialmansa">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a rel="external" href="https://www.instagram.com/cristialmansita/">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a rel="external" href="https://www.linkedin.com/in/cristina-almansa-herrero">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a rel="external" href="mailto:hola@cristinalmansa.es">
+                                    <i class="far fa-envelope"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </section>
     <section id="works" class="section dos">
         <div class="cuerpo">
@@ -53,23 +71,110 @@
                     <div class="lineasub"></div>
                 </div>
                 <div class="secciones">
-                        <div class="tarjeta uno activo">
-                            <h3 class="h3">Website Redesign</h3>
-                        </div>
-                        <div class="tarjeta dos activo">
-                            <h3 class="h3">Copycat Website</h3>
-                        </div>
-                        <div class="tarjeta tres activo">
-                            <h3 class="h3">Copycat Website</h3>
-                        </div>
-                        <div class="tarjeta cuatro activo">
-                            <h3 class="h3">Graphic Design</h3>
-                        </div>
+                        <a rel="section" class="a" href="#grid">
+                            <div class="tarjeta uno activo">
+                                <h3 class="h3">Website Redesign</h3>
+                            </div>
+                        </a>
+                        <a rel="section" class="a" href="#grid2">
+                            <div class="tarjeta dos">
+                                <h3 class="h3">Copycat Apple</h3>
+                            </div>
+                        </a>
+                        <a rel="section" class="a" href="#grid3">
+                            <div class="tarjeta tres">
+                                <h3 class="h3">Copycat Pesto Restaurant</h3>
+                            </div>
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div id="grid" class="desplegado uno">
+            <div class="grid uno">
+                <img loading="lazy" src="assets/1.png" alt="cbm1" class="img">
+                <img loading="lazy" src="assets/2.png" alt="cbm2" class="img">
+                <img loading="lazy" src="assets/3.png" alt="cbm3" class="img">
+                <img loading="lazy" src="assets/4.png" alt="cbm4" class="img">
+                <img loading="lazy" src="assets/5.png" alt="cbm5" class="img">
+                <img loading="lazy" src="assets/6.png" alt="cbm6" class="img">
+            </div>
+            <a rel="section" href="#works">
+                <div class="botonvolver uno">
+                    <p class="p">Close this window</p>
+                </div>
+            </a>
+        </div>
+        <div class="lightbox uno">
+            <button class="button">+</button>
+            <img loading="lazy" src="#" alt="imgGrande" class="img">
+            <div class="infolightbox">
+                <div class="cajatexto">
+                    <p class="p">Trabajo personal de rediseño de la página web del Centro de Biología Molecular</p>
+                </div>
+                <div class="btngithub">
+                    <a rel="external" href="#">Ver en GitHub</a>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div id="grid2" class="desplegado dos">
+            <div class="grid dos">
+                <img loading="lazy" src="assets/7.png"  alt="apple1" class="img">
+                <img loading="lazy" src="assets/8.png"  alt="apple2" class="img">
+                <img loading="lazy" src="assets/9.png"  alt="apple3" class="img">
+                <img loading="lazy" src="assets/10.png" alt="apple4" class="img">
+                <img loading="lazy" src="assets/11.png" alt="apple5" class="img">
+                <img loading="lazy" src="assets/12.png" alt="apple6" class="img">
+            </div>
+            <a rel="section" href="#works">
+                <div class="botonvolver dos">
+                    <p class="p">Close this window</p>
+                </div>
+            </a>
+        </div>
+        <div class="lightbox dos">
+            <button class="button">+</button>
+            <img loading="lazy" src="#" alt="imgGrande" class="img">
+            <div class="infolightbox">
+                <div class="cajatexto">
+                    <p class="p">Trabajo personal de copiar la página web de Apple</p>
+                </div>
+                <div class="btngithub">
+                    <a rel="external" href="#">Ver en GitHub</a>
+                    <i class="fab fa-github"></i>
+                </div>
+            </div>
+        </div>
+        <div id="grid3" class="desplegado tres">
+            <div class="grid tres">
+                <img loading="lazy" src="assets/13.png" alt="restaurante1" class="img">
+                <img loading="lazy" src="assets/14.png" alt="restaurante2" class="img">
+                <img loading="lazy" src="assets/15.png" alt="restaurante3" class="img">
+                <img loading="lazy" src="assets/16.png" alt="restaurante4" class="img">
+                <img loading="lazy" src="assets/17.png" alt="restaurante5" class="img">
+                <img loading="lazy" src="assets/18.png" alt="restaurante6" class="img">
+            </div>
+            <a rel="section" href="#works">
+                <div class="botonvolver tres">
+                    <p class="p">Close this window</p>
+                </div>
+            </a>
+        </div>
+        <div class="lightbox tres">
+            <button class="button">+</button>
+            <img loading="lazy" src="#" alt="imgGrande" class="img">
+            <div class="infolightbox">
+                <div class="cajatexto">
+                    <p class="p">Trabajo personal de copiar la página web de Pesto Restaurant</p>
+                </div>
+                <div class="btngithub">
+                    <a rel="external" href="#">Ver en GitHub</a>
+                    <i class="fab fa-github"></i>
                 </div>
             </div>
         </div>
     </section>
-    <section id="rrss" class="section">
+    <footer id="rrss" class="section">
         <div class="foot">
             <div class="about">
                 <div class="cincuenta uno">
@@ -85,20 +190,26 @@
                 </div>
                 <div class="cincuenta dos">
                     <div class="img">
-                        <img class="" src="assets/fotopers.png" alt="">
+                        <img loading="lazy" class="fotoPersonal" src="assets/fotopers.png" alt="FotoPerso">
                     </div>
                 </div>            
             </div>
             <div class="rrss">
                 <div class="iconos">
-                    <a href="https://github.com/cristialmansa"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/cristialmansita/"><i class="fab fa-instagram"></i></a>
-                    <a href="www.linkedin.com/in/cristina-almansa-herrero"><i class="fab fa-linkedin-in"></i></a>
+                    <a rel="external" href="https://github.com/cristialmansa">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a rel="external" href="https://www.instagram.com/cristialmansita/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a rel="external" href="https://www.linkedin.com/in/cristina-almansa-herrero">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
                 <p class="p">Contact me :</p>
-                <a href="mailto:hola@cristinalmansa.es" class="email">hola@cristinalmansa.es</a>
+                <a rel="external" href="mailto:hola@cristinalmansa.es" class="email">hola@cristinalmansa.es</a>
             </div>
         </div>
-    </section>
+    </footer>
 </body>
 </html>

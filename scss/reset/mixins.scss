@@ -1,9 +1,3 @@
-@mixin background($imgpath,$position:center,$repeat:no-repeat,$size:cover) {
-    background-image: url($imgpath);
-    background-position: $position;
-    background-repeat: $repeat;
-    background-size: $size;
-}
 @mixin flex( $direction , $wrap , $justify , $align ) {
     display: flex;
     flex-flow : $direction $wrap; 

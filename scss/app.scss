@@ -1,70 +1,68 @@
 @import 'reset/reset', 'reset/keyframes', 'reset/mixins', 'reset/variables';
 
-* {
-    font-family: 'Montserrat', sans-serif;
-}
 .boton {
     width: 40px;
     height: 40px;
-    border: 1px solid #FE90AF;
+    border: 1px solid var(--bg1rosa);
     position: fixed;
     cursor: pointer;
-    z-index: 3;
+    z-index: 4;
     right: 2%;
     top: 8%;
+    opacity: .6;
+    &:hover {
+        opacity: 1;
+    }
 }
 .boton .linea1 {
     width: 20px;
     height: 2px;
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     position: absolute;
     top: calc( 30% - 1px);;
     left: 20%;
     transform-origin: right;
-    z-index: 3;
+    z-index: 4;
     transition: all 2s ease;
     &.activo {
         transform: rotate(-45deg);
-        background: white;
     }
 }
 .boton .linea2 {
     width: 13px;
     height: 2px;
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     position: absolute;
     top: calc( 60% - 4.5px);;
     left: 20%;
     transform-origin: right;
-    z-index: 3;
+    z-index: 4;
     transition: all 2s ease;
     &.activo {
         transform: rotate(45deg);
-        background: white;
     }
 }
 .boton .linea3 {
     width: 7px;
     height: 2px;
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     position: absolute;
     top: calc( 90% - 9px);
     right: 25%;
-    z-index: 3;
+    z-index: 4;
     transition: all 2s ease;
     &.activo {
         transform: rotate(45deg);
-        background: white;
     }
 }
 .cortinilla {
     position: fixed;
     width: 100%;
     height: 100%;
-    transition: 1s all ease;
+    transition: all 1s ease;
     z-index: 1;
     opacity: 0;
     right: 0;
@@ -77,26 +75,59 @@
     }
 }
 .menucortina {
-    z-index: 2;
-    width: 100%;
-    height: 100vh;
-    @include flex( row , nowrap , center , center );
+    width:100%;
+    min-height: 100vh;
+    position: fixed;
     top: 0;
-    left: 0;
+    left:0;
+    z-index: 1;
+    @include flex( row , nowrap , center , center );
     opacity: 0;
-    transition: 1s all ease;
-    &.activo {
-        opacity: 1;
+    transition: all .5s ease;
+    pointer-events: none;
+    &.activo{
+        opacity: 1;    
+        pointer-events: auto;   
     }
 }
-.menucortina .li {
-    font-size: 3em;
-    // margin: 1em;
-    list-style-type: none;
+.menucortina .centrado{
+    @include flex( row ,nowrap , center , center );
+}
+.menucortina .ul{
+    font-size: 3.2em;
+}
+.menucortina .li{
+    margin: 0.7em;
+    font-weight: 500;
+    transform: translateX(5em);
+    transition: all .75s ease;
+    opacity: 0;
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     -webkit-background-clip: text;
-     color: transparent;
+    color: transparent;;
+    &:hover {
+        background: linear-gradient(to left, 
+    var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
+    -webkit-background-clip: text;
+    color: transparent;;
+    }
+}
+.menucortina.activo .li{
+    transform: translateX(0em);
+    opacity: 1;
+    &:nth-child(1){
+        transition-delay: 0s;
+    }
+    &:nth-child(2){
+        transition-delay: .2s;
+    }
+    &:nth-child(3){
+        transition-delay: .4s;
+    }
+}
+.li .iconos .fab, .li .iconos .far {
+    font-size: .6em;
 }
 .section.uno {
     height: 100vh;
@@ -108,7 +139,7 @@
     rgb(25, 25, 60), 
     rgb(50, 20, 70),
     rgb(70, 25, 75),
-    rgb(80, 30, 90));
+    rgb(80, 30, 90));;
 }
 .mainpage {
     @include flex( column, wrap, center, center);
@@ -119,15 +150,18 @@
     font-weight: 600;
     position: absolute;
     top: 45%;
+    animation: aparecer 4s;
 }
 .puesto {
-    color: var(--colortexto);
     position: absolute;
-    top: 55%;
-}
-.h1, .puesto {
-    animation-name: aparecer;
-    animation-duration: 5s;
+    color: var(--colortexto);
+    animation: aparecer 5s;
+    @media screen and (max-width:1600px){
+        top: 55%;
+    }
+    @media screen and (max-width:900px){
+        top: 58%;
+    }
 }
 .logo {
     width: 100px;
@@ -157,6 +191,9 @@
 .works {
     height: 100vh;
     @include flex ( column, nowrap, center, right);
+    &.activo {
+        display: none
+    }
 }
 .secciones {
     @include flex ( row, wrap, space-around , inherit);
@@ -167,18 +204,21 @@
 }
 .nombreseccion .h2 {
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     -webkit-background-clip: text;
-     color: transparent;
+    color: transparent;;
     font-size: 2em;
     font-weight: 600;
     margin-bottom: 5px;
+    @media (max-width: 1215px) {
+        font-size: 1em;
+    }
 }
 .lineasub {
     width: 0px;
     height: 1px;
     background: linear-gradient(to left, 
-    #d74d89, #eb8777, #f1a355);
+    var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
     animation-name: crecer;
     animation-delay: 2s;
     animation-duration: 3s;
@@ -203,41 +243,32 @@
     text-align: center;
     transition: .7s all ease;
     &:hover {
-        color: rgb(25, 25, 60);;
+        color: rgb(25, 25, 60);
     }
 }
 .tarjeta.uno {
     background: linear-gradient(to right, 
-    #541447, #dd89ad, #61529f);
-    box-shadow:  1px 1px 3px #61529f,
-                -3px -3px 10px #541447;
+    var(--bg3granate), var(--bg3rosaclaro), var(--bg3morado));
+    box-shadow:  1px 1px 3px var(--bg3morado),
+                -3px -3px 10px var(--bg3granate);
     background-size: var(--bgsize);
     animation: background-mov 3s infinite alternate;
     margin-bottom: var(--marginm);      
 }
 .tarjeta.dos {
     background: linear-gradient(to left, 
-    #d74d89, #eb8777, #f1a355);
-    box-shadow:  1px 1px 4px #eb8777,
-                -3px -3px 10px #d74d89;
+    var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
+    box-shadow:  1px 1px 4px var(--bg2salmon),
+                -3px -3px 10px var(--bg2fucsia);
     background-size: var(--bgsize);
     animation: background-mov 3s infinite alternate;
     margin-bottom: var(--marginm);    
 }
 .tarjeta.tres {
     background: linear-gradient(to left top, 
-    #36569c, #5d8dca, #825a9b);
-    box-shadow:  1px 1px 4px #5d8dca,
-                -3px -3px 10px #36569c;
-    background-size: var(--bgsize);
-    animation: background-mov 3s infinite alternate;
-    margin-bottom: var(--marginm);    
-}
-.tarjeta.cuatro {
-    background: linear-gradient(to right bottom, 
-    #3e2763, #dd2e5d, #ebb278);
-    box-shadow:  1px 1px 4px #dd2e5d,
-                -3px -3px 10px #3e2763;
+    var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
+    box-shadow:  1px 1px 4px var(--bg4azulclaro),
+                -3px -3px 10px var(--bg4azul);
     background-size: var(--bgsize);
     animation: background-mov 3s infinite alternate;
     margin-bottom: var(--marginm);    
@@ -254,6 +285,7 @@
     rgb(80, 30, 90));
     @include flex ( column, nowrap, space-evenly, center )
 }
+
 .about {
     @include flex ( row, wrap, center, center ) 
 }
@@ -269,10 +301,10 @@
 .infopersonal .p:nth-child(2), .infopersonal .p:last-child {
     font-size: 0.6em;
     line-height: 20px;
-    background: linear-gradient(to left, 
-    #541447, #dd89ad, #61529f);
+    background: linear-gradient(to right, 
+    var(--bg3granate), var(--bg3rosaclaro), var(--bg3morado));
     -webkit-background-clip: text;
-     color: transparent;
+    color: transparent;
 }
 .img {
     width: 225px;
@@ -302,28 +334,28 @@
 .rrss {
     text-align: center;
 }
-.iconos .fab {
+.iconos .fab, .iconos .far {
     font-size: 1.5em;
     padding-right: 20px;
     cursor: pointer;
     background: linear-gradient(to left, 
-    #C6EA8D, #FE90AF);
+    var(--bg1lima), var(--bg1rosa));
     -webkit-background-clip: text;
      color: transparent;
-}
-.iconos .fab:hover {
-    background: linear-gradient(to left, 
-    #36569c, #5d8dca, #825a9b);
-    -webkit-background-clip: text;
-     color: transparent;
+     &:hover {
+        background: linear-gradient(to left, 
+        var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
+        -webkit-background-clip: text;
+         color: transparent;
+     }
 }
 .iconos {
     margin-bottom: 20px;
-    @include flex ( row, wrap, center, center)
+    @include flex ( row, wrap, center, center);
 }
 .rrss .email {
     background: linear-gradient(to left, 
-    #36569c, #5d8dca, #825a9b);
+    var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
     -webkit-background-clip: text;
      color: transparent;
     font-size: 0.9em;
@@ -335,3 +367,108 @@
     font-size: 0.7em;
     margin-bottom: 10px;
 }
+.desplegado.uno, .desplegado.dos, .desplegado.tres, .desplegado.cuatro {
+    padding-top: var(--marginm);
+    opacity: 0;
+    transition: all 3s ease;
+    display: none;
+    &.activo {
+        opacity: 1;
+        @include flex ( row , wrap , space-around, center);
+    }
+}
+.grid {
+    @include flex ( row , wrap , space-around, center);
+}
+.grid .img {
+    border-radius: 10%;
+    margin-bottom: 1em;
+    transform: scale(.9);
+    transition: all .5s ease;
+    cursor: pointer;
+    box-shadow:  5px 5px 30px rgb(87, 87, 126),
+                -5px -5px 30px rgb(8, 8, 50),;
+    opacity: .6;
+    &:hover {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.botonvolver {
+    background: linear-gradient(to left top, 
+    var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
+    -webkit-background-clip: text;
+    color: transparent;
+     cursor: pointer;
+     @include flex ( row, wrap, baseline, center);
+
+     &:hover {
+        background: linear-gradient(to left, 
+        var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
+        -webkit-background-clip: text;
+        color: transparent;
+     }
+}
+.lightbox {
+    width: 100%;
+    height: 100%;
+    background: rgba(80, 30, 90,.9);
+    backdrop-filter: blur(1em);
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include flex ( column, nowrap , space-around, center);
+    transition: all .5s ease;
+    opacity: 0;
+    pointer-events: none;
+    &.activo {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.lightbox .button {
+    font-size: 3em;
+    transform: rotate(45deg);
+    cursor: pointer;
+    background: linear-gradient(to left, 
+    var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
+    -webkit-background-clip: text;
+     color: transparent;
+}
+.lightbox .img {
+    width: 90%;
+    height: 70vh;
+    object-fit: contain;
+
+}
+.infolightbox {
+    width: 60%;
+    @include flex ( column , nowrap, center, center )
+}
+.cajatexto {
+    text-align: center;
+    color: var(--colortexto);
+    font-size: 0.7em;
+}
+.btngithub {
+    margin-top: var(--marginxs);
+    margin-bottom: var(--marginxs);
+    background: linear-gradient(to left, 
+    var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
+    -webkit-background-clip: text;
+     color: transparent;
+     font-size: 0.8em;
+     @include flex ( row, wrap, space-around, center);
+     &:hover {
+        background: linear-gradient(to left top, 
+        var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
+        -webkit-background-clip: text;
+        color: transparent;
+     }
+}
+.btngithub .fab {
+    font-size: 1.3em;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+

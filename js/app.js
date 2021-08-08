@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 particlesJS("particles-js", {
   particles: {
@@ -65,9 +65,10 @@ let efectoScroll = (section) => {
     let alturaV = window.innerHeight;
     let dist = seccion.offsetTop;
 
-    if (pixel >= dist - alturaV / 1.5) {
+    if (pixel >= dist - (alturaV/2) ) {
       seccion.classList.add("activo");
     }
+    
   });
 };
 efectoScroll();
@@ -82,7 +83,10 @@ window.addEventListener("scroll", () => {
 
   let calculo = dist - altoV / 1.5;
 
-  if (pixel >= calculo) {
+  // if (pixel >= calculo) {
+  //   about.classList.add("activo");
+  // }
+  if (pixel >= dist - altoV) {
     about.classList.add("activo");
   }
 });
@@ -97,3 +101,108 @@ window.addEventListener("scroll", () => {
     foto.classList.add("activo");
   }
 });
+
+const boton = document.querySelector('.boton')
+const linea1 = document.querySelector('.linea1')
+const linea2 = document.querySelector('.linea2')
+const linea3 = document.querySelector('.linea3')
+const cortinilla = document.querySelector('.cortinilla')
+const menucortina = document.querySelector('.menucortina')
+const li1 = document.querySelector('.li.uno')
+const li2 = document.querySelector('.li.dos')
+
+boton.addEventListener('click',()=>{
+    linea1.classList.toggle('activo')
+    linea2.classList.toggle('activo')
+    linea3.classList.toggle('activo')
+    cortinilla.classList.toggle('activo')
+    menucortina.classList.toggle('activo')
+})
+li1.addEventListener('click', ()=>{
+  cortinilla.classList.remove('activo')
+  menucortina.classList.remove('activo')
+  linea1.classList.toggle('activo')
+  linea2.classList.toggle('activo')
+  linea3.classList.toggle('activo')
+})
+li2.addEventListener('click', ()=>{
+  cortinilla.classList.remove('activo')
+  menucortina.classList.remove('activo')
+  linea1.classList.toggle('activo')
+  linea2.classList.toggle('activo')
+  linea3.classList.toggle('activo')
+})
+
+const img       = document.querySelectorAll('.grid.uno .img')
+const lightbox  = document.querySelector('.lightbox.uno')
+const button    = document.querySelector('.lightbox.uno .button')
+const imgLightbox = document.querySelector('.lightbox.uno .img')
+
+img.forEach((v,i)=>{
+    img[i].addEventListener('click',()=>{
+        imgLightbox.src = img[i].src
+        lightbox.classList.add('activo')
+    })
+})
+button.addEventListener('click',()=>{
+    lightbox.classList.remove('activo')
+})
+const img2       = document.querySelectorAll('.grid.dos .img')
+const lightbox2  = document.querySelector('.lightbox.dos')
+const button2    = document.querySelector('.lightbox.dos .button')
+const imgLightbox2 = document.querySelector('.lightbox.dos .img')
+
+img2.forEach((v,j)=>{
+    img2[j].addEventListener('click',()=>{
+        imgLightbox2.src = img2[j].src
+        lightbox2.classList.add('activo')
+    })
+})
+button2.addEventListener('click',()=>{
+    lightbox2.classList.remove('activo')
+})
+const img3       = document.querySelectorAll('.grid.tres .img')
+const lightbox3  = document.querySelector('.lightbox.tres')
+const button3    = document.querySelector('.lightbox.tres .button')
+const imgLightbox3 = document.querySelector('.lightbox.tres .img')
+
+img3.forEach((v,i)=>{
+    img3[i].addEventListener('click',()=>{
+        imgLightbox3.src = img3[i].src
+        lightbox3.classList.add('activo')
+    })
+})
+button3.addEventListener('click',()=>{
+    lightbox3.classList.remove('activo')
+})
+
+const tarjetauno = document.querySelector('.tarjeta.uno')
+const grid1 = document.querySelector('.desplegado.uno')
+const tarjetados = document.querySelector('.tarjeta.dos')
+const grid2 = document.querySelector('.desplegado.dos')
+const tarjetatres = document.querySelector('.tarjeta.tres')
+const grid3 = document.querySelector('.desplegado.tres')
+const works = document.querySelector('.works')
+const btnvolver1 = document.querySelector('.botonvolver.uno')
+const btnvolver2 = document.querySelector('.botonvolver.dos')
+const btnvolver3 = document.querySelector('.botonvolver.tres')
+
+tarjetauno.addEventListener('click', ()=>{
+    grid1.classList.toggle('activo')
+})
+tarjetados.addEventListener('click', ()=>{
+  grid2.classList.toggle('activo')
+})
+tarjetatres.addEventListener('click', ()=>{
+  grid3.classList.toggle('activo')
+})
+btnvolver1.addEventListener('click', ()=>{
+    grid1.classList.toggle('activo')
+})
+btnvolver2.addEventListener('click', ()=>{
+  grid2.classList.toggle('activo')
+})
+btnvolver3.addEventListener('click', ()=>{
+  grid3.classList.toggle('activo')
+})
+

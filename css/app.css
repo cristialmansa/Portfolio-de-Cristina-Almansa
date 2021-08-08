@@ -40,10 +40,6 @@ table, tr, td {
   border-spacing: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 h1, h2, h3, h4, h5, h6, strong, a {
   display: block;
   text-decoration: none;
@@ -70,7 +66,7 @@ form, input, textarea, select, button, label {
 }
 
 body {
-  font-family: var(--tipo-principal);
+  font-family: "Montserrat", sans-serif;
   font-size: 100%;
   min-height: 100vh;
   background-color: var(--blanco);
@@ -131,89 +127,92 @@ body {
 :root {
   --circulo: 50%;
   --marginm: 50px;
+  --marginxs: 15px;
   --bgsize: 500%;
   --colortexto: white;
-}
-
-* {
-  font-family: "Montserrat", sans-serif;
+  --bg1lima: #C6EA8D;
+  --bg1rosa: #FE90AF;
+  --bg2fucsia: #d74d89;
+  --bg2salmon: #eb8777;
+  --bg2naranja: #f1a355;
 }
 
 .boton {
   width: 40px;
   height: 40px;
-  border: 1px solid #FE90AF;
+  border: 1px solid var(--bg1rosa);
   position: fixed;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
   right: 2%;
   top: 8%;
+  opacity: 0.6;
+}
+.boton:hover {
+  opacity: 1;
 }
 
 .boton .linea1 {
   width: 20px;
   height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(#C6EA8D), to(#FE90AF));
-  background: linear-gradient(to left, #C6EA8D, #FE90AF);
+  background: -webkit-gradient(linear, right top, left top, from(var(--bg1lima)), to(var(--bg1rosa)));
+  background: linear-gradient(to left, var(--bg1lima), var(--bg1rosa));
   position: absolute;
   top: calc( 30% - 1px);
   left: 20%;
   -webkit-transform-origin: right;
           transform-origin: right;
-  z-index: 3;
+  z-index: 4;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
 }
 .boton .linea1.activo {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  background: white;
 }
 
 .boton .linea2 {
   width: 13px;
   height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(#C6EA8D), to(#FE90AF));
-  background: linear-gradient(to left, #C6EA8D, #FE90AF);
+  background: -webkit-gradient(linear, right top, left top, from(var(--bg1lima)), to(var(--bg1rosa)));
+  background: linear-gradient(to left, var(--bg1lima), var(--bg1rosa));
   position: absolute;
   top: calc( 60% - 4.5px);
   left: 20%;
   -webkit-transform-origin: right;
           transform-origin: right;
-  z-index: 3;
+  z-index: 4;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
 }
 .boton .linea2.activo {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  background: white;
 }
 
 .boton .linea3 {
   width: 7px;
   height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(#C6EA8D), to(#FE90AF));
-  background: linear-gradient(to left, #C6EA8D, #FE90AF);
+  background: -webkit-gradient(linear, right top, left top, from(var(--bg1lima)), to(var(--bg1rosa)));
+  background: linear-gradient(to left, var(--bg1lima), var(--bg1rosa));
   position: absolute;
   top: calc( 90% - 9px);
   right: 25%;
-  z-index: 3;
+  z-index: 4;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
 }
 .boton .linea3.activo {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  background: white;
 }
 
 .cortinilla {
   position: fixed;
   width: 100%;
   height: 100%;
-  -webkit-transition: 1s all ease;
-  transition: 1s all ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   z-index: 1;
   opacity: 0;
   right: 0;
@@ -227,9 +226,12 @@ body {
 }
 
 .menucortina {
-  z-index: 2;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,23 +245,80 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 0;
-  left: 0;
   opacity: 0;
-  -webkit-transition: 1s all ease;
-  transition: 1s all ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  pointer-events: none;
 }
 .menucortina.activo {
   opacity: 1;
+  pointer-events: auto;
+}
+
+.menucortina .centrado {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menucortina .ul {
+  font-size: 3.2em;
 }
 
 .menucortina .li {
-  font-size: 3em;
-  list-style-type: none;
-  background: -webkit-gradient(linear, right top, left top, from(#C6EA8D), to(#FE90AF));
-  background: linear-gradient(to left, #C6EA8D, #FE90AF);
+  margin: 0.7em;
+  font-weight: 500;
+  -webkit-transform: translateX(5em);
+          transform: translateX(5em);
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+  opacity: 0;
+  background: -webkit-gradient(linear, right top, left top, from(var(--bg1lima)), to(var(--bg1rosa)));
+  background: linear-gradient(to left, var(--bg1lima), var(--bg1rosa));
   -webkit-background-clip: text;
   color: transparent;
+}
+.menucortina .li:hover {
+  background: -webkit-gradient(linear, right top, left top, from(var(--bg2fucsia)), color-stop(var(--bg2salmon)), to(var(--bg2naranja)));
+  background: linear-gradient(to left, var(--bg2fucsia), var(--bg2salmon), var(--bg2naranja));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.menucortina.activo .li {
+  -webkit-transform: translateX(0em);
+          transform: translateX(0em);
+  opacity: 1;
+}
+.menucortina.activo .li:nth-child(1) {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.menucortina.activo .li:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.menucortina.activo .li:nth-child(3) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.menucortina.activo .li:nth-child(4) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.li .iconos .fab, .li .iconos .far {
+  font-size: 0.6em;
 }
 
 .section.uno {
@@ -291,19 +350,16 @@ body {
   font-weight: 600;
   position: absolute;
   top: 45%;
+  -webkit-animation: aparecer 4s;
+          animation: aparecer 4s;
 }
 
 .puesto {
-  color: var(--colortexto);
   position: absolute;
   top: 55%;
-}
-
-.h1, .puesto {
-  -webkit-animation-name: aparecer;
-          animation-name: aparecer;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  color: var(--colortexto);
+  -webkit-animation: aparecer 5s;
+          animation: aparecer 5s;
 }
 
 .logo {
@@ -346,6 +402,9 @@ body {
   -webkit-box-align: right;
       -ms-flex-align: right;
           align-items: right;
+}
+.works.activo {
+  display: none;
 }
 
 .secciones {
@@ -577,7 +636,7 @@ body {
   text-align: center;
 }
 
-.iconos .fab {
+.iconos .fab, .iconos .far {
   font-size: 1.5em;
   padding-right: 20px;
   cursor: pointer;
@@ -586,8 +645,7 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
-
-.iconos .fab:hover {
+.iconos .fab:hover, .iconos .far:hover {
   background: -webkit-gradient(linear, right top, left top, from(#36569c), color-stop(#5d8dca), to(#825a9b));
   background: linear-gradient(to left, #36569c, #5d8dca, #825a9b);
   -webkit-background-clip: text;
@@ -625,4 +683,193 @@ body {
   color: var(--colortexto);
   font-size: 0.7em;
   margin-bottom: 10px;
+}
+
+.desplegado.uno, .desplegado.dos, .desplegado.tres, .desplegado.cuatro {
+  padding-top: var(--marginm);
+  opacity: 0;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+  display: none;
+}
+.desplegado.uno.activo, .desplegado.dos.activo, .desplegado.tres.activo, .desplegado.cuatro.activo {
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid .img {
+  border-radius: 10%;
+  margin-bottom: 1em;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 30px #57577e, -5px -5px 30px #080832;
+          box-shadow: 5px 5px 30px #57577e, -5px -5px 30px #080832;
+  opacity: 0.6;
+}
+.grid .img:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.botonvolver {
+  background: -webkit-gradient(linear, right top, left top, from(#36569c), color-stop(#5d8dca), to(#825a9b));
+  background: linear-gradient(to left, #36569c, #5d8dca, #825a9b);
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.botonvolver:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#d74d89), color-stop(#eb8777), to(#f1a355));
+  background: linear-gradient(to left, #d74d89, #eb8777, #f1a355);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  background: rgba(80, 30, 90, 0.9);
+  -webkit-backdrop-filter: blur(1em);
+          backdrop-filter: blur(1em);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.lightbox.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox .button {
+  font-size: 3em;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, from(#36569c), color-stop(#5d8dca), to(#825a9b));
+  background: linear-gradient(to left, #36569c, #5d8dca, #825a9b);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.lightbox .img {
+  width: 90%;
+  height: 70vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.infolightbox {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cajatexto {
+  text-align: center;
+  color: var(--colortexto);
+  font-size: 0.7em;
+}
+
+.btngithub {
+  margin-top: var(--marginxs);
+  margin-bottom: var(--marginxs);
+  background: -webkit-gradient(linear, right top, left top, from(#d74d89), color-stop(#eb8777), to(#f1a355));
+  background: linear-gradient(to left, #d74d89, #eb8777, #f1a355);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.btngithub:hover {
+  background: -webkit-gradient(linear, right bottom, left top, from(#36569c), color-stop(#5d8dca), to(#825a9b));
+  background: linear-gradient(to left top, #36569c, #5d8dca, #825a9b);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btngithub .fab {
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  cursor: pointer;
 }
