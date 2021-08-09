@@ -201,6 +201,10 @@
 .nombreseccion { 
     padding-left: var(--marginm);
     margin-bottom: var(--marginm);
+    @media screen and (max-width:900px){
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
 }
 .nombreseccion .h2 {
     background: linear-gradient(to left, 
@@ -210,9 +214,6 @@
     font-size: 2em;
     font-weight: 600;
     margin-bottom: 5px;
-    @media (max-width: 1215px) {
-        font-size: 1em;
-    }
 }
 .lineasub {
     width: 0px;
@@ -231,6 +232,14 @@
     cursor: pointer;
     @include flex ( column, nowrap, space-around, center);
     transition: .4s all ease;
+    @media screen and (max-width:900px){
+        width: 150px;
+        height: 150px;
+        &:hover {
+            width: 160px;
+            height: 160px;
+        }
+    }
     &:hover {
         width: 190px;
         height: 190px;
@@ -242,6 +251,9 @@
     font-weight: 600;
     text-align: center;
     transition: .7s all ease;
+    @media screen and (max-width:900px){
+        font-size: 1.2em;
+    }
     &:hover {
         color: rgb(25, 25, 60);
     }
@@ -297,6 +309,9 @@
     color: var(--colortexto);
     font-size: 0.7em;
     line-height: 30px;
+    @media screen and (max-width:900px){
+        font-size: 0.6em;
+    }
 }
 .infopersonal .p:nth-child(2), .infopersonal .p:last-child {
     font-size: 0.6em;
@@ -309,13 +324,20 @@
 .img {
     width: 225px;
     height: 225px;
+    @media screen and (max-width:900px){
+        width: 200px;
+        height: 200px;
+    }
 }
 .img img {
     border-radius: var(--circulo);
 }
 .cincuenta {
     width: 50%;
-    @include flex ( row, nowrap, center, baseline )
+    @include flex ( row, nowrap, center, baseline );
+    @media screen and (max-width:900px){
+        @include flex ( column, nowrap, center, baseline);
+    }
 }
 .cincuenta.uno {
     opacity: 0;
@@ -389,6 +411,11 @@
     box-shadow:  5px 5px 30px rgb(87, 87, 126),
                 -5px -5px 30px rgb(8, 8, 50),;
     opacity: .6;
+    @media screen and (max-width:900px){
+        width: 150px;
+        height: 150px;
+        }
+    }
     &:hover {
         transform: scale(1);
         opacity: 1;
