@@ -101,7 +101,12 @@ window.addEventListener("scroll", () => {
     foto.classList.add("activo");
   }
 });
+const cookie = document.querySelector('.cookies')
+const close = document.querySelector('.pestanacerrar')
 
+close.addEventListener('click',()=>{
+  cookie.classList.add('activo')
+})
 const boton = document.querySelector('.boton')
 const linea1 = document.querySelector('.linea1')
 const linea2 = document.querySelector('.linea2')

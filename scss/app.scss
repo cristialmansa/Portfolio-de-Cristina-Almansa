@@ -141,26 +141,64 @@
     rgb(70, 25, 75),
     rgb(80, 30, 90));;
 }
+.cookies {
+    position: fixed;
+    bottom: 0;
+    left: 35%;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 4;
+    background: linear-gradient(to left, 
+    var(--bg1lima), var(--bg1rosa));
+    @include flex ( row, nowrap, space-around, center);
+    &.activo {
+        display: none;
+    }
+}
+.cookies .p{
+    font-size: 0.8em;
+    color: rgb(25, 25, 60);
+}
+.pestanacerrar .p {
+    transform: rotate(45deg);
+    cursor: pointer;
+    font-size: 1.4em;
+}
 .mainpage {
+    max-width: 2000px;
     @include flex( column, wrap, center, center);
 }
 .h1 {
     color: var(--colortexto);
-    font-size: 2.8em;
+    font-size: 4em;
     font-weight: 600;
     position: absolute;
     top: 45%;
     animation: aparecer 4s;
+    @media screen and (max-width:900px){
+        font-size: 3em;
+    }
+    @media screen and (max-width:550px){
+        font-size: 2em;
+    }
 }
 .puesto {
+    font-size: 1.5em;
+    top: 58%;
     position: absolute;
     color: var(--colortexto);
     animation: aparecer 5s;
-    @media screen and (max-width:1600px){
-        top: 55%;
-    }
     @media screen and (max-width:900px){
-        top: 58%;
+        font-size: 1em;
+    }
+    @media screen and (max-width:550px){
+        font-size: 0.8em;
+        top: 54%;
+    }
+    @media screen and (max-width:450px){
+        top: 52%;
     }
 }
 .logo {
@@ -168,6 +206,9 @@
     position: absolute;
     opacity: 0.3;
     top: 35%;
+    @media screen and (max-width:450px){
+        top: 30%;
+    }
 }
 .section.dos {
     background: linear-gradient(to left bottom,
@@ -197,6 +238,9 @@
 }
 .secciones {
     @include flex ( row, wrap, space-around , inherit);
+    @media screen and (max-width:550px){
+        @include flex ( column, nowrap, space-around, center );
+    }
 }
 .nombreseccion { 
     padding-left: var(--marginm);
@@ -211,7 +255,7 @@
     var(--bg1lima), var(--bg1rosa));
     -webkit-background-clip: text;
     color: transparent;;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -226,18 +270,18 @@
     animation-fill-mode: forwards;
 }
 .tarjeta {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: var(--circulo);
     cursor: pointer;
     @include flex ( column, nowrap, space-around, center);
     transition: .4s all ease;
     @media screen and (max-width:900px){
-        width: 150px;
-        height: 150px;
+        width: 190px;
+        height: 190px;
         &:hover {
-            width: 160px;
-            height: 160px;
+            width: 170px;
+            height: 170px;
         }
     }
     &:hover {
@@ -247,7 +291,7 @@
 }
 .tarjeta .h3 {
     color: var(--colortexto);
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 600;
     text-align: center;
     transition: .7s all ease;
@@ -286,7 +330,7 @@
     margin-bottom: var(--marginm);    
 }
 .foot {
-    height: 100vh;
+    // height: 100vh;
     background: linear-gradient(to right bottom, 
     rgb(1, 1, 10),
     rgb(6, 6, 30),
@@ -299,18 +343,26 @@
 }
 
 .about {
-    @include flex ( row, wrap, center, center ) 
+    @include flex ( row, wrap, center, center );
+    @media screen and (max-width:550px){
+        @include flex ( column, wrap, center, center );
+    }
 }
 .infopersonal {
     width: 80%;
     padding-left: 20px;
+    @media screen and (max-width:900px){
+        margin-bottom: 25px;
+    }
 }
 .infopersonal .p:first-child {
     color: var(--colortexto);
     font-size: 0.7em;
     line-height: 30px;
     @media screen and (max-width:900px){
-        font-size: 0.6em;
+        font-size: 0.9em;
+        text-align: center;
+        margin-bottom: 10px;
     }
 }
 .infopersonal .p:nth-child(2), .infopersonal .p:last-child {
@@ -320,6 +372,10 @@
     var(--bg3granate), var(--bg3rosaclaro), var(--bg3morado));
     -webkit-background-clip: text;
     color: transparent;
+    @media screen and (max-width:900px){
+        font-size: 0.9em;
+        text-align: center;
+    }
 }
 .img {
     width: 225px;
@@ -336,10 +392,15 @@
     width: 50%;
     @include flex ( row, nowrap, center, baseline );
     @media screen and (max-width:900px){
-        @include flex ( column, nowrap, center, baseline);
+        @include flex ( column, nowrap, center, center);
+        width: 70%;
+    }
+    @media screen and (max-width:550px){
+        width: 100%;
     }
 }
 .cincuenta.uno {
+    margin-top: 40px;
     opacity: 0;
     transition: 3s all ease;
     &.activo {
@@ -352,12 +413,18 @@
     &.activo {
         opacity: 1;
     }
+    @media screen and (max-width:900px){
+        margin-bottom: 20px;
+    }
+    @media screen and (max-width:550px){
+        margin-bottom: 20px;
+    }
 }
 .rrss {
     text-align: center;
 }
 .iconos .fab, .iconos .far {
-    font-size: 1.5em;
+    font-size: 2.5em;
     padding-right: 20px;
     cursor: pointer;
     background: linear-gradient(to left, 
@@ -370,6 +437,9 @@
         -webkit-background-clip: text;
          color: transparent;
      }
+     @media screen and (max-width:900px){
+        font-size: 2em;
+    }
 }
 .iconos {
     margin-bottom: 20px;
@@ -380,13 +450,14 @@
     var(--bg4azul), var(--bg4azulclaro), var(--bg4violeta));
     -webkit-background-clip: text;
      color: transparent;
-    font-size: 0.9em;
+    font-size: 1.5em;
     letter-spacing: 2px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 .rrss .p {
     color: var(--colortexto);
-    font-size: 0.7em;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 .desplegado.uno, .desplegado.dos, .desplegado.tres, .desplegado.cuatro {
@@ -394,6 +465,7 @@
     opacity: 0;
     transition: all 3s ease;
     display: none;
+    max-width: 1100px;
     &.activo {
         opacity: 1;
         @include flex ( row , wrap , space-around, center);
@@ -412,9 +484,8 @@
                 -5px -5px 30px rgb(8, 8, 50),;
     opacity: .6;
     @media screen and (max-width:900px){
-        width: 150px;
-        height: 150px;
-        }
+        width: 200px;
+        height: 200px;
     }
     &:hover {
         transform: scale(1);
